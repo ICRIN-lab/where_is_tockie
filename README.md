@@ -1,15 +1,10 @@
-# Where is Tockie Tasks
+# Where is Tockie 
 
 This repository is composed of two cognitive tasks, allowing to evaluate the hypothesis of the iCRIN laboratory of the filtration impairement in OCD.
 
 ## WhereIsCharly
 
 Cette tâche permet de regarder blablabla
-
-## SevenDiff
-
-Cette tâche évalue la capacité d'un patient/sujet à trouver des différences (ou non!) dans des images de différentes
-nature (images, images choquantes, échecs, calligraphie).
 
 ## More information
 
