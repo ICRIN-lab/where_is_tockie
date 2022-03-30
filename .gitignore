@@ -1,0 +1,5 @@
+.DS_Store
+.idea
+task_template.py
+img/.DS_Store
+__pycache__/
