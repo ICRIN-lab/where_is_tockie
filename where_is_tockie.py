@@ -9,7 +9,7 @@ from task_template import TaskTemplate
 
 
 def size(count_image):
-    image = Image.open(f'img/charly/image_{count_image}.png')
+    image = Image.open(f'img/image_{count_image}.png')
     imgwidth, imgheight = image.size
 
     if imgwidth > get_monitors()[0].width:
@@ -24,7 +24,7 @@ def size(count_image):
     return imgwidth, imgheight
 
 
-class WhereIsCharly(TaskTemplate):
+class WhereIsTockie(TaskTemplate):
     trials = len(dic)
     yes_key_name = "p"
     yes_key_code = "p"
@@ -48,7 +48,7 @@ class WhereIsCharly(TaskTemplate):
     def task(self, no_trial, exp_start_timestamp, trial_start_timestamp, practice=False, count_image=1):
         keyboard_pressed = True
         while True:
-            self.create_visual_image(image=f'img/charly/image_{no_trial}.png', size=size(self.count_image)).draw()
+            self.create_visual_image(image=f'img/image_{no_trial}.png', size=size(self.count_image)).draw()
             self.win.flip()
             core.wait(dic[no_trial][0])
             for i in range(len(dic[no_trial][1])):
@@ -72,5 +72,5 @@ class WhereIsCharly(TaskTemplate):
                 count_image += 1
 
 
-exp = WhereIsCharly(csv_folder="csv")
+exp = WhereIsTockie(csv_folder="csv")
 exp.start()
