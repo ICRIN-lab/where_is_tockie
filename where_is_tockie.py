@@ -41,9 +41,8 @@ class WhereIsTockie(TaskTemplate):
         f"de droite \n\n appuyez sur la touche '{no_key_name}' pour répondre non ou pour selectionner la réponse de "
         f"gauche"]
 
-    csv_headers = ['id_candidate', 'no_trial', 'count_image', 'no_question', 'question', 'result', 'ans_candidate',
-                   'good_ans',
-                   'reaction_time', 'time_stamp']
+    csv_headers = ['id_candidate', 'no_trial', 'count_image', 'no_question', 'question', 'ans_candidate',
+                   'good_ans', 'correct', 'reaction_time', 'time_stamp']
 
     def task(self, no_trial, exp_start_timestamp, trial_start_timestamp, practice=False, count_image=1):
         keyboard_pressed = True
@@ -52,15 +51,15 @@ class WhereIsTockie(TaskTemplate):
             self.win.flip()
             core.wait(dic[no_trial][0])
             for i in range(len(dic[no_trial][1])):
-                result = 0
+                correct = False
                 self.create_visual_text(dic[no_trial][1][i][0]).draw()
                 self.win.flip()
                 resp, rt = self.get_response_with_time()
                 if resp == dic[no_trial][1][i][1]:
-                    result = 1
+                    correct = True
                 self.update_csv(self.participant, no_trial, count_image, i,
-                                dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], result, resp,
-                                dic[no_trial][1][i][1], round(rt, 2), round(time.time() - exp_start_timestamp, 2))
+                                dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
+                                dic[no_trial][1][i][1], correct, round(rt, 2), round(time.time() - exp_start_timestamp, 2))
             self.create_visual_text(f"Voulez vous revoir l'image et répondre à nouveau "
                                     f"aux questions ?\n\n Non / Oui ").draw()
             self.win.flip()
