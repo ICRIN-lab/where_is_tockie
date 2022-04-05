@@ -2,4 +2,5 @@
 .idea
 task_template.py
 img/.DS_Store
+csv/*.csv
 __pycache__/
