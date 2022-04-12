@@ -70,20 +70,15 @@ dic = {
         [["Combien y a-t-il de drapeaux sur cette photo ? \n\n 4 / 5",
           'a'],
 
-         ["Les drapeaux sont-ils tous plantés à la même profondeur ? \n\n Non / Oui",
+         ["Sur la première tombe, le nom inscrit est : \n\n JACKSON / JOHNSON",
           'a']]
 
         ],
 
     8: [5,
-        [["Avez-vous vu un téléphone sur cette photo ? \n\n Non / Oui ",
-          'p'],
+        [["De quelle couleur est le téléphone ? \n\n Bleu / Rose",
+          'a']]
 
-         ["De quelle couleur est ce téléphone ? \n\n Noir / Rose",
-          'p'],
-
-         ["Le téléphone était-il décroché ? \n\n Non / Oui",
-          'p']]
         ],
 
     9: [4,
@@ -99,7 +94,7 @@ dic = {
          [["Tous les personnages ont-ils un casque ? \n\n Non / Oui",
            'p'],
 
-          ["Combien y a-t-il de personnages sur cette photo ? \n\n 55 / 201",
+          ["Combien y a-t-il de personnages sur cette photo ? \n\n 55 / 100",
            'a']]
 
          ],
@@ -199,8 +194,7 @@ dic = {
 
     22: [7,
          [["Il y a 5 bateaux. \n\n  Faux / Vrai", 'p'],
-          ["Il y a  des bateaux a deux voiles. \n\n  Faux / Vrai", 'p'],
-          ["Tous les protagonistes portent des couvre-chefs. \n\n  Faux / Vrai", 'a'],
+          ["Il y a  des bateaux a 2 voiles. \n\n  Faux / Vrai", 'p'],
           ["On peut voir un chien. \n\n  Faux / Vrai", 'a']]
          ],
 
@@ -210,7 +204,7 @@ dic = {
 
     24: [8,
          [["Les tapis sont alignés. \n\n  Faux / Vrai", 'a'],
-          ["Il y a une brosse a dent près du lit. \n\n  Faux / Vrai", 'a'],
+          ["Il y a une brosse à dent près du lit. \n\n  Faux / Vrai", 'a'],
           ["L'armoire est ouverte. \n\n Faux / Vrai", 'a']]
          ],
 
@@ -223,10 +217,10 @@ dic = {
          ],
 
     27: [4,
-         [["Les éléphants sont symétriques. \n\n  Faux / Vrai", 'a']]
+         [["Les éléphants sont parfaitement symétriques. \n\n  Faux / Vrai", 'a']]
          ],
 
-    28: [4, [["Les toits sont à la meme hauteur. \n\n  Faux / Vrai", 'a']]
+    28: [4, [["Les toits sont à la même hauteur. \n\n  Faux / Vrai", 'a']]
          ],
 
     29: [4, [["Le deuxième éléphant porte une pyramide.  \n\n  Faux / Vrai", 'p']]
@@ -235,7 +229,7 @@ dic = {
     30: [6, [["Il y a plus de 30 papillons.  \n\n  Faux / Vrai ", 'a']]
          ],
 
-    31: [6, [["Il y a un maïs sur l'image. \n\n Faux / Vrai", 'p'],
+    31: [6, [["Il y a du maïs sur l'image. \n\n Faux / Vrai", 'p'],
              ["Au moins deux poires figurent sur l'image. \n\n Faux / Vrai", 'p']]
          ]
 }
