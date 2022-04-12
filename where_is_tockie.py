@@ -37,8 +37,8 @@ class WhereIsTockie(TaskTemplate):
     next = f"Pour passer à l'instruction suivante, appuyez sur la touche {yes_key_name}"
 
     instructions = [
-        f"Dans ce mini-jeu, appuyez sur la touche '{yes_key_name}' pour répondre oui ou pour selectionner la réponse "
-        f"de droite \n\n appuyez sur la touche '{no_key_name}' pour répondre non ou pour selectionner la réponse de "
+        f"Dans cette expérience: \n\n - appuyez sur la touche '{yes_key_name}' pour répondre oui ou pour selectionner la réponse "
+        f"de droite \n\n - appuyez sur la touche '{no_key_name}' pour répondre non ou pour selectionner la réponse de "
         f"gauche"]
 
     csv_headers = ['id_candidate', 'no_trial', 'count_image', 'no_question', 'question', 'ans_candidate',
