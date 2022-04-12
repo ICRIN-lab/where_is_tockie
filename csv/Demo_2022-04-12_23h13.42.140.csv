@@ -1,0 +1,12 @@
+id_candidate, no_trial, count_image, no_question, question, ans_candidate, good_ans, correct, reaction_time, time_stamp
+Demo, 0, 1, 0, Combien y a-t-il de personnes sur cette photo ? , a, a, True, 0.52, 8.25
+Demo, 0, 1, 1, Combien y a-t-il de cafetières sur la photo ? , a, p, False, 0.49, 8.75
+Demo, 1, 1, 0, Combien y a-t-il de personnes sur cette photo ? , p, a, False, 0.62, 13.26
+Demo, 1, 2, 0, Combien y a-t-il de personnes sur cette photo ? , a, a, True, 0.34, 17.7
+Demo, 2, 1, 0, Combien y a-t-il de personnes assises sur cette photo ? , a, a, True, 0.57, 25.36
+Demo, 2, 1, 1, Combien y a-t-il de personnes sur cette photo ? , p, a, False, 0.55, 25.91
+Demo, 2, 1, 2, Avez-vous vu une personne habillée d'une robe blanche ? , a, a, True, 0.55, 26.47
+Demo, 3, 1, 0, Combien y a-t-il de personnes sur cette photo ? , a, p, False, 0.54, 30.99
+Demo, 3, 1, 1, Avez-vous vu une corde à sauter ? , p, p, True, 0.88, 31.88
+Demo, 3, 2, 0, Combien y a-t-il de personnes sur cette photo ? , a, p, False, 0.35, 36.17
+Demo, 3, 2, 1, Avez-vous vu une corde à sauter ? , p, p, True, 0.34, 36.51
