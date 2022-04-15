@@ -1,6 +1,9 @@
-.DS_Store
-.idea
-task_template.py
-img/.DS_Store
+#useless folders and files
 __pycache__/
+.idea
+img/.DS_Store
+.DS_Store
+
+#Python and csv files
+task_template.py
 csv/*.csv
