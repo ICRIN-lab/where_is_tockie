@@ -41,17 +41,17 @@ class WhereIsTockie(TaskTemplate):
                 time_stamp = time.time() - exp_start_timestamp
                 resp, rt = self.get_response_with_time(self.response_pad)
 
-                if resp == dic[no_trial][1][i][1]:
+                if resp in dic[no_trial][1][i][1]:
                     correct = True
                 if self.response_pad:
                     self.update_csv(self.participant, no_trial, count_image, i,
                                     dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
-                                    dic[no_trial][1][i][1], correct, round(rt - time_stamp, 2),
+                                    dic[no_trial][1][i][1][self.response_pad], correct, round(rt - time_stamp, 2),
                                     round(rt, 2))
                 else:
                     self.update_csv(self.participant, no_trial, count_image, i,
                                     dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
-                                    dic[no_trial][1][i][1], correct, round(rt, 2),
+                                    dic[no_trial][1][i][1][self.response_pad], correct, round(rt, 2),
                                     round(time.time() - exp_start_timestamp, 2))
             self.create_visual_text(f"Voulez vous revoir l'image et répondre à nouveau "
                                     f"aux questions ?\n\n Non / Oui ").draw()
