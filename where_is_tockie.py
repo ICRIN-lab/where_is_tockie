@@ -6,9 +6,9 @@ from Template_Task_Psychopy.task_template import TaskTemplate
 
 
 class WhereIsTockie(TaskTemplate):
-    # IMPORTANT ! To modify depending on the task you want to perform
+    # IMPORTANT ! To MODIFY IF NEEDED
     nb_ans = 2
-    response_pad = False
+    response_pad = True  # has to be set on "True" on production.
     # END OF IMPORTANT
     trials = 32
     count_image = 1
