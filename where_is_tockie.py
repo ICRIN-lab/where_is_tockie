@@ -5,7 +5,7 @@ from psychopy import visual, gui, data, core
 from screeninfo import get_monitors
 
 from images_dict import dic
-from task_template import TaskTemplate
+from Template_Task_Psychopy.task_template import TaskTemplate
 
 
 def size(count_image):
