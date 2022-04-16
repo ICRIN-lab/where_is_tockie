@@ -8,23 +8,22 @@ from Template_Task_Psychopy.task_template import TaskTemplate
 class WhereIsTockie(TaskTemplate):
     # IMPORTANT ! To modify depending on the task you want to perform
     nb_ans = 2
-    response_pad = True
+    response_pad = False
     # END OF IMPORTANT
     trials = 32
     count_image = 1
-
-    yes_key_name = "vert"
+    yes_key_name = "verte"
     yes_key_code = "6"
     no_key_name = "rouge"
     no_key_code = "0"
     quit_code = "3"
     keys = ["space", yes_key_code, no_key_code, quit_code]
 
-    next = f"Pour passer à l'instruction suivante, appuyez sur la touche {yes_key_code}"
+    next = f"Pour passer à l'instruction suivante, appuyez sur la touche {yes_key_name}"
     instructions = [
-        f"Dans cette expérience : \n\n - appuyez sur la touche '{yes_key_code}' pour répondre oui ou pour selectionner la réponse "
-        f"de droite \n\n - appuyez sur la touche '{no_key_code}' pour répondre non ou pour selectionner la réponse de "
-        f"gauche"]
+        f"Dans cette expérience : \n\n - appuyez sur la touche {yes_key_name} pour répondre oui ou pour selectionner "
+        f"la réponse de droite \n\n - appuyez sur la touche {no_key_name} pour répondre non ou pour selectionner la "
+        f"réponse de gauche"]
 
     csv_headers = ['id_candidate', 'no_trial', 'count_image', 'no_question', 'question', 'ans_candidate',
                    'good_ans', 'correct', 'reaction_time', 'time_stamp']
