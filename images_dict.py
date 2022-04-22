@@ -70,13 +70,13 @@ dic = {
         [["Combien y a-t-il de drapeaux sur cette photo ? \n\n 4 / 5",
           ['a', '0']],
 
-         ["Sur la première tombe, le nom inscrit est : \n\n JACKSON / JOHNSON",
+         ["Le nom inscrit sur la première tombe est : \n\n JACKSON / JOHNSON",
           ['a', '0']]]
 
         ],
 
     8: [5,
-        [["De quelle couleur est le téléphone ? \n\n Bleu / Rose",
+        [["De quelle couleur est le téléphone ? \n\n bleu / rose",
           ['a', '0']]]
 
         ],
@@ -199,7 +199,7 @@ dic = {
          ],
 
     23: [4,
-         [["Toutes les lunes sont dans le même sens. \n\n  Vrai / Faux", ['a', '0']]]
+         [["Toutes les lunes sont dans le même sens. \n\n  Faux / Vrai", ['a', '0']]]
          ],
 
     24: [8,
