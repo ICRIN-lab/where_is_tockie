@@ -18,6 +18,7 @@ class WhereIsTockie(TaskTemplate):
     no_key_code = "0"
     quit_code = "3"
     keys = ["space", yes_key_code, no_key_code, quit_code]
+    launch_example = True
 
     next = f"Pour passer à l'instruction suivante, appuyez sur la touche {yes_key_name}"
     instructions = [
@@ -60,9 +61,43 @@ class WhereIsTockie(TaskTemplate):
             resp_retry = self.get_response(self.response_pad)
 
             if resp_retry == self.no_key_code:
-                break
+                if self.launch_example:
+                    return correct
+                else:
+                    break
             else:
                 count_image += 1
+
+    def example(self, exp_start_timestamp):
+        score_example = 0
+        example = self.create_visual_text(text="Commençons par un petit entraînement")
+        tutoriel_end = self.create_visual_text(
+            text="L'entraînement est désormais terminé"
+        )
+        example.draw()
+        self.create_visual_text(self.next, pos=(0, -0.4), font_size=0.04).draw()
+        self.win.flip()
+        self.wait_yes(self.response_pad)
+        for u in range(100, 103):
+            if self.task(u, exp_start_timestamp, time.time(), True):
+                score_example += 1
+                self.create_visual_text(
+                    f"Bravo ! Vous avez {score_example}/{u-99}"
+                ).draw()
+                self.win.flip()
+                core.wait(2)
+            else:
+                self.create_visual_text(
+                    f"Dommage... Vous avez {score_example}/{u-99}"
+                ).draw()
+                self.win.flip()
+                core.wait(2)
+        self.create_visual_text(f"Vous avez obtenu {score_example}/3").draw()
+        self.win.flip()
+        core.wait(5)
+        tutoriel_end.draw()
+        self.win.flip()
+        core.wait(5)
 
 
 exp = WhereIsTockie(csv_folder="csv")

@@ -231,5 +231,14 @@ dic = {
 
     31: [6, [["Il y a du maïs sur l'image. \n\n Faux / Vrai", ['p', '6']],
              ["Au moins deux poires figurent sur l'image. \n\n Faux / Vrai", ['p', '6']]]
-         ]
+         ],
+
+    100: [3, [["Les nuages sont gris. \n\n Faux / Vrai", ['a', '0']]],
+          ],
+
+    101: [3, [["Les deux protagonistes portent-ils des lunettes ? \n\n Faux / Vrai", ['a', '0']]],
+          ],
+
+    102: [6, [["Avez-vous vu un éléphant ? \n\n Non / Oui", ['p', '6']]],
+          ],
 }
