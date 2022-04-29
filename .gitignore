@@ -5,6 +5,6 @@ img/.DS_Store
 .DS_Store
 
 #Python and csv files
-Template_Task_Psychopy/
+Template_Task_Psychopy
 task_template.py
 csv/*.csv
