@@ -99,6 +99,8 @@ class WhereIsTockie(TaskTemplate):
         self.win.flip()
         core.wait(5)
 
+
 exp_start_timestamp = time.time()
 exp = WhereIsTockie("csv", exp_start_timestamp)
 exp.start()
+
