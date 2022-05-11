@@ -41,11 +41,11 @@ class WhereIsTockie(TaskTemplate):
                 result = 0
                 self.create_visual_text(dic[no_trial][1][i][0]).draw()
                 self.win.flip()
-                time_stamp = time.time() - self.exp_start_timestamp
+                time_stamp = time.time() - self.response_pad_timestamp
                 resp, rt = self.get_response_with_time(self.response_pad)
 
                 if resp in dic[no_trial][1][i][1]:
-                    result  = 1
+                    result = 1
                 if self.response_pad:
                     self.update_csv(self.participant, no_trial, count_image, i,
                                     dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
@@ -69,7 +69,7 @@ class WhereIsTockie(TaskTemplate):
             else:
                 count_image += 1
 
-    def example(self, exp_start_timestamp):
+    def example(self):
         score_example = 0
         example = self.create_visual_text(text="Commençons par un petit entraînement")
         tutoriel_end = self.create_visual_text(
