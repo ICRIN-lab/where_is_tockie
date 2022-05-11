@@ -8,7 +8,7 @@ from Template_Task_Psychopy.task_template import TaskTemplate
 class WhereIsTockie(TaskTemplate):
     # IMPORTANT ! To MODIFY IF NEEDED
     nb_ans = 2
-    response_pad = True  # has to be set on "True" on production.
+    response_pad = False  # has to be set on "True" on production.
     # END OF IMPORTANT
     trials = 32
     count_image = 1
@@ -19,6 +19,7 @@ class WhereIsTockie(TaskTemplate):
     quit_code = "3"
     keys = ["space", yes_key_code, no_key_code, quit_code]
     launch_example = True
+    exp_start_timestamp = time.time()
 
     next = f"Pour passer à l'instruction suivante, appuyez sur la touche {yes_key_name}"
     instructions = [
@@ -28,33 +29,33 @@ class WhereIsTockie(TaskTemplate):
         f"Placez vos index sur les touches {no_key_name} et {yes_key_name}."]
 
     csv_headers = ['id_candidate', 'no_trial', 'count_image', 'no_question', 'question', 'ans_candidate',
-                   'good_ans', 'correct', 'reaction_time', 'time_stamp']
+                   'good_ans', 'result', 'reaction_time', 'time_stamp']
 
-    def task(self, no_trial, trial_start_timestamp, practice=False, count_image=1):
+    def task(self, no_trial, count_image=1):
         while True:
             self.create_visual_image(image=f'img/image_{no_trial}.png',
                                      size=self.size(f'image_{no_trial}.png')).draw()
             self.win.flip()
             core.wait(dic[no_trial][0])
             for i in range(len(dic[no_trial][1])):
-                correct = False
+                result = 0
                 self.create_visual_text(dic[no_trial][1][i][0]).draw()
                 self.win.flip()
-                time_stamp = time.time() - exp_start_timestamp
+                time_stamp = time.time() - self.exp_start_timestamp
                 resp, rt = self.get_response_with_time(self.response_pad)
 
                 if resp in dic[no_trial][1][i][1]:
-                    correct = True
+                    result  = 1
                 if self.response_pad:
                     self.update_csv(self.participant, no_trial, count_image, i,
                                     dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
-                                    dic[no_trial][1][i][1][self.response_pad], correct, round(rt - time_stamp, 2),
+                                    dic[no_trial][1][i][1][self.response_pad], result, round(rt - time_stamp, 2),
                                     round(rt, 2))
                 else:
                     self.update_csv(self.participant, no_trial, count_image, i,
                                     dic[no_trial][1][i][0][:dic[no_trial][1][i][0].find('\n')], resp,
-                                    dic[no_trial][1][i][1][self.response_pad], correct, round(rt, 2),
-                                    round(time.time() - exp_start_timestamp, 2))
+                                    dic[no_trial][1][i][1][self.response_pad], result, round(rt, 2),
+                                    round(time.time() - self.exp_start_timestamp, 2))
             self.create_visual_text(f"Voulez vous revoir l'image et répondre à nouveau "
                                     f"aux questions ?\n\n Non / Oui ").draw()
             self.win.flip()
@@ -62,13 +63,13 @@ class WhereIsTockie(TaskTemplate):
 
             if resp_retry == self.no_key_code:
                 if self.launch_example:
-                    return correct
+                    return result
                 else:
                     break
             else:
                 count_image += 1
 
-    def example(self):
+    def example(self, exp_start_timestamp):
         score_example = 0
         example = self.create_visual_text(text="Commençons par un petit entraînement")
         tutoriel_end = self.create_visual_text(
@@ -79,7 +80,7 @@ class WhereIsTockie(TaskTemplate):
         self.win.flip()
         self.wait_yes(self.yes_key_code)
         for u in range(100, 103):
-            if self.task(u, time.time(), True):
+            if self.task(u):
                 score_example += 1
                 self.create_visual_text(
                     f"Bravo ! Vous avez {score_example}/{u-99}"
@@ -100,7 +101,6 @@ class WhereIsTockie(TaskTemplate):
         core.wait(5)
 
 
-exp_start_timestamp = time.time()
-exp = WhereIsTockie("csv", exp_start_timestamp)
+exp = WhereIsTockie("csv")
 exp.start()
 
