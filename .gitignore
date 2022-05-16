@@ -8,3 +8,4 @@ img/.DS_Store
 Template_Task_Psychopy
 task_template.py
 csv/*.csv
+csv_eyetracker/*.tsv
