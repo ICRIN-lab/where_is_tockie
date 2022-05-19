@@ -35,9 +35,10 @@ The task starts with instructions written in french, and are designed for "Track
 
 Here is an example of the task. 
 
-![img_wit_readme](https://user-images.githubusercontent.com/92592951/169015607-20e7bf9c-894b-4c1f-ba85-587010ad9348.png)
-![qst_wit1_readme](https://user-images.githubusercontent.com/92592951/169015614-b491445e-10f3-4ab7-a1c6-0a8f59904fee.png)
-![qst_wit2_readme](https://user-images.githubusercontent.com/92592951/169015621-23ed891b-8dc8-4010-9007-2c808858c902.png)
+
+<img src="img_readme/wit_readme.png" width="400">
+<img src="img_readme/qst_readme.png" width="400"> 
+<img src="img_readme/wit_qst_rm.png" width="400">
 
 
 
