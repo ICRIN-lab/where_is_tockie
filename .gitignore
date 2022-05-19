@@ -9,3 +9,5 @@ Template_Task_Psychopy
 task_template.py
 csv/*.csv
 img_readme
+csv_eyetracker/*.tsv
+

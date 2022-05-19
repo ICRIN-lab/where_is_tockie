@@ -8,7 +8,8 @@ from Template_Task_Psychopy.task_template import TaskTemplate
 class WhereIsTockie(TaskTemplate):
     # IMPORTANT ! To MODIFY IF NEEDED
     nb_ans = 2
-    response_pad = True  # has to be set on "True" on production.
+    response_pad = False  # has to be set on "True" on production.
+    eye_tracker_study = False  # same
     # END OF IMPORTANT
     trials = 32
     count_image = 1
@@ -42,7 +43,7 @@ class WhereIsTockie(TaskTemplate):
                 self.create_visual_text(dic[no_trial][1][i][0]).draw()
                 self.win.flip()
                 time_stamp = time.time() - self.response_pad_timestamp
-                resp, rt = self.get_response_with_time(self.response_pad)
+                resp, rt = self.get_response_with_time()
 
                 if resp in dic[no_trial][1][i][1]:
                     result = 1
@@ -59,7 +60,7 @@ class WhereIsTockie(TaskTemplate):
             self.create_visual_text(f"Voulez vous revoir l'image et répondre à nouveau "
                                     f"aux questions ?\n\n Non / Oui ").draw()
             self.win.flip()
-            resp_retry = self.get_response(self.response_pad)
+            resp_retry = self.get_response()
 
             if resp_retry == self.no_key_code:
                 if self.launch_example:
