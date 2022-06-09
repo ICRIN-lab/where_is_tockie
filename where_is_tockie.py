@@ -35,7 +35,7 @@ class WhereIsTockie(TaskTemplate):
     def task(self, no_trial, count_image=1):
         while True:
             self.create_visual_image(image=f'img/img_{no_trial}.png',
-                                     size=self.size(f'image_{no_trial}.png')).draw()
+                                     size=self.size(f'img_{no_trial}.png')).draw()
             self.win.flip()
             core.wait(dic[no_trial][0])
             for i in range(len(dic[no_trial][1])):
